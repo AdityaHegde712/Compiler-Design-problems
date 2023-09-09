@@ -7,7 +7,7 @@ variable_pattern = r'\b[a-zA-Z0-9_]+ ='
 special_symbol_pattern = r'[#?\[\]]'
 
 # Read the C file and tokenize it
-file_path = 'test.c'
+file_path = 'Activity 1\\test.c'
 with open(file_path, 'r') as file:
     content = file.read()
 
