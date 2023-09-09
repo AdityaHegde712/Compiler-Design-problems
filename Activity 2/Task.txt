@@ -1,0 +1,1 @@
+Write a program in C to take input for the line, "printf('variables are %d%f%c', v1, v2, v3)" and print the variables, the format specifiers, the order of the variables, the number of variables, and what each format specifier means.
