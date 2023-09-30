@@ -38,8 +38,8 @@ def make_table(no_keys, sets):
 
 
 if __name__ == '__main__':
-    sets = read_sets(int(input("Enter the number of sets: \n")))
-    # sets = gen_sets(int(input("Enter the number of sets: \n")))
+    # sets = read_sets(int(input("Enter the number of sets: \n")))
+    sets = gen_sets(int(input("Enter the number of sets: \n")))
     no_keys = int(input("Enter the number of keys: \n"))
 
     # Printing the sets
