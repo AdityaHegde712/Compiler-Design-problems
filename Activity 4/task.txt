@@ -1,0 +1,6 @@
+Tasks:
+1. Read CFG and print it
+2. Compute FIRST and FOLLOW of all non-terminal characters
+3. Construct LL(1) parsing table
+4. Check whether given cfg is LL1 or not 
+5. Read any input string and parse it
