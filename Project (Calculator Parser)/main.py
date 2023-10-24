@@ -142,8 +142,8 @@ def remove_spaces(inp):
 
 
 if __name__ == "__main__":
-    # inp = remove_spaces(input("Calculator expression: "))
-    inp = remove_spaces("(a+b*(c-d) / e) % h")
+    inp = remove_spaces(input("Calculator expression: "))
+    # inp = remove_spaces("(a+b*(c-d) / e) % h")
     print("\nInput: ", inp)
     
     print("\nTokenization Result: ", )
