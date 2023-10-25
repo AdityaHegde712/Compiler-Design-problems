@@ -5,7 +5,7 @@ class Conversion:
         self.top = -1
         self.capacity = capacity
          
-        # This array is used a stack
+        # This array is used as a stack
         self.array = []
          
         # Precedence setting

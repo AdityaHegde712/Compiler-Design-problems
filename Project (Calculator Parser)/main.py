@@ -4,9 +4,11 @@ from infixToPostfix import Conversion
 class Node:
     pass
 
+
 class NumberNode(Node):
     def __init__(self, value):
         self.value = value
+
 
 class OperatorNode(Node):
     def __init__(self, operator, left, right):
@@ -27,6 +29,7 @@ class ThreeAddressCodeGenerator:
     def generate_3addr_code(self, node):
         if isinstance(node, NumberNode):
             return node.value
+        
         elif isinstance(node, OperatorNode):
             left_operand = self.generate_3addr_code(node.left)
             right_operand = self.generate_3addr_code(node.right)
@@ -34,6 +37,7 @@ class ThreeAddressCodeGenerator:
             operator = node.operator
             print(f"{result_temp} = {left_operand} {operator} {right_operand}")
             return result_temp
+        
         else:
             print("Invalid node found")
             print(type(node))
@@ -64,6 +68,7 @@ def build_ast_from_postfix(postfix_expression):
 def print_ast(node, level=0):
     if isinstance(node, NumberNode):
         print(f"{'  |' * level}Number: {node.value}")
+
     elif isinstance(node, OperatorNode):
         print(f"{'  |' * level}Operator: {node.operator}")
         print_ast(node.left, level + 1)
@@ -75,10 +80,13 @@ def verify_brackets(inp):
     for i in inp:
         if i == '(':
             count += 1
+
         elif i == ')':
             count -= 1
+
         if count < 0:
             return False
+        
     return count == 0
     
 
@@ -96,8 +104,10 @@ def is_valid(inp):
 
     if not bracket_flag:
         return "Invalid Expression: Number of opening and closing brackets are not equal"
+    
     elif not operator_flag:
         return "Invalid Expression: Adjacent operators are not allowed"
+    
     else:
         return "Valid Expression"
     
@@ -130,6 +140,7 @@ def tokenize(inp):
                 raise ValueError("INVALID CHARACTER: " + symbol)
             
             index += 1
+
     except ValueError as e:
         print(e)
     
@@ -142,13 +153,14 @@ def remove_spaces(inp):
 
 
 if __name__ == "__main__":
-    inp = remove_spaces(input("Calculator expression: "))
-    # inp = remove_spaces("(a+b*(c-d) / e) % h")
+    # inp = remove_spaces(input("Calculator expression: "))
+    inp = remove_spaces("(a+b*(c-d) / e) % h")
     print("\nInput: ", inp)
     
     print("\nTokenization Result: ", )
     tokens = tokenize(inp)
-    print(tokens)
+    for item in tokens:
+        print(item)
     
     print("\nValidation Result: ", )
     print(is_valid(inp))
