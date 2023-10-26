@@ -1,0 +1,8 @@
+Given a few data structures, with only int input
+
+=> Array, linked list, binary search tree, hash map - For each, do insertion, deletion, and lookup
+Measure time taken for each, and output in tabular format.
+
+Rand values, about 5000 for each
+
+Given a random collection of elements, implement insertion, deletion, and lookup in Arrays, LinkedLists, Binary Search Trees, and Hash maps. Compare the time complexities (time taken) for each. 
