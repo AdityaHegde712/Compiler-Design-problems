@@ -62,26 +62,6 @@ def worst_fit(processes, memory_blocks):
 
 
 def next_fit(processes, memory_blocks):
-    # used_blocks = []
-    # last_block = None
-    # bad_processes = []
-    # memory_blocks_copy = memory_blocks.copy()
-    # for process in processes: # Iterate through processes
-    #     for block in memory_blocks: # Iterate through memory blocks for each process
-    #         if block[1] >= process[1] and block[1] not in [used_block[1] for used_block in used_blocks]:
-    #             if last_block is None:
-    #                 last_block = block
-    #             elif block[1] < last_block[1]:
-    #                 last_block = block
-    #     if last_block is not None:
-    #         print(f"{process[0]} is allocated to {last_block[0]}")
-
-    #         used_blocks.append(list(memory_blocks_copy.pop(memory_blocks_copy.index(last_block))) + [process[0]])
-    #     else:
-    #         print(f"{process[0]} is not allocated to any memory block")
-    
-    # return used_blocks, memory_blocks, bad_processes # Return used blocks, unused blocks, unallocated processes
-
     used_blocks = []
     bad_processes = []
     memory_blocks_copy = memory_blocks.copy() # Create a copy of the memory_blocks list
