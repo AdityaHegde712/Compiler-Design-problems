@@ -1,0 +1,101 @@
+
+Process input: 
+
+Given Processes: 
+[('P0', 20), ('P1', 50), ('P2', 100), ('P3', 500), ('P4', 100)]
+
+Memory block input: 
+
+Given Memory Blocks: 
+[('M0', 100), ('M1', 200), ('M2', 500), ('M3', 300), ('M4', 600), ('M5', 800), ('M6', 20), ('M7', 60), ('M8', 250)]
+
+----------------------------------------------------------------------
+First fit: 
+
+Given Processes: 
+[('P0', 20), ('P1', 50), ('P2', 100), ('P3', 500), ('P4', 100)]
+
+Given Memory Blocks: 
+[('M0', 100), ('M1', 200), ('M2', 500), ('M3', 300), ('M4', 600), ('M5', 800), ('M6', 20), ('M7', 60), ('M8', 250)]
+P0 is allocated to M0
+P1 is allocated to M1
+P2 is allocated to M2
+P3 is allocated to M4
+P4 is allocated to M3
+
+Used blocks: [['M0', 100, 'P0'], ['M1', 200, 'P1'], ['M2', 500, 'P2'], ['M4', 600, 'P3'], ['M3', 300, 'P4']]
+
+Unused memory blocks: [('M0', 100), ('M1', 200), ('M2', 500), ('M3', 300), ('M4', 600), ('M5', 800), ('M6', 20), ('M7', 60), ('M8', 250)]
+
+Unallocated processes: []
+
+Total wasted space: [[80, 'P0'], [150, 'P1'], [400, 'P2'], [100, 'P3'], [200, 'P4']]
+
+----------------------------------------------------------------------
+Best fit: 
+
+Given Processes: 
+[('P0', 20), ('P1', 50), ('P2', 100), ('P3', 500), ('P4', 100)]
+
+Given Memory Blocks: 
+[('M0', 100), ('M1', 200), ('M2', 500), ('M3', 300), ('M4', 600), ('M5', 800), ('M6', 20), ('M7', 60), ('M8', 250)]
+P0 is allocated to M6
+P1 is allocated to M7
+P2 is allocated to M0
+P3 is allocated to M2
+P4 is allocated to M1
+
+Used blocks: [['M6', 20, 'P0'], ['M7', 60, 'P1'], ['M0', 100, 'P2'], ['M2', 500, 'P3'], ['M1', 200, 'P4']]
+
+Unused memory blocks: [('M0', 100), ('M1', 200), ('M2', 500), ('M3', 300), ('M4', 600), ('M5', 800), ('M6', 20), ('M7', 60), ('M8', 250)]
+
+Unallocated processes: []
+
+Total wasted space: [[0, 'P0'], [10, 'P1'], [0, 'P2'], [0, 'P3'], [100, 'P4']]
+
+----------------------------------------------------------------------
+Worst fit: 
+
+Given Processes: 
+[('P0', 20), ('P1', 50), ('P2', 100), ('P3', 500), ('P4', 100)]
+
+Given Memory Blocks: 
+[('M0', 100), ('M1', 200), ('M2', 500), ('M3', 300), ('M4', 600), ('M5', 800), ('M6', 20), ('M7', 60), ('M8', 250)]
+P0 is allocated to M5
+P1 is allocated to M4
+P2 is allocated to M2
+P3 is not allocated to any memory block
+P4 is allocated to M3
+
+Used blocks: [['M5', 800, 'P0'], ['M4', 600, 'P1'], ['M2', 500, 'P2'], ['M3', 300, 'P4']]
+
+Unused memory blocks: [('M0', 100), ('M1', 200), ('M2', 500), ('M3', 300), ('M4', 600), ('M5', 800), ('M6', 20), ('M7', 60), ('M8', 250)]
+
+Unallocated processes: [('P3', 500)]
+
+Total wasted space: [[780, 'P0'], [550, 'P1'], [400, 'P2'], [200, 'P4']]
+
+----------------------------------------------------------------------
+Next fit: 
+
+Given Processes: 
+[('P0', 20), ('P1', 50), ('P2', 100), ('P3', 500), ('P4', 100)]
+
+Given Memory Blocks: 
+[('M0', 100), ('M1', 200), ('M2', 500), ('M3', 300), ('M4', 600), ('M5', 800), ('M6', 20), ('M7', 60), ('M8', 250)]
+P0 is allocated to M0
+P1 is allocated to M1
+P2 is allocated to M2
+P3 is allocated to M4
+P4 is allocated to M5
+
+Used blocks: [['M0', 100, 'P0'], ['M1', 200, 'P1'], ['M2', 500, 'P2'], ['M4', 600, 'P3'], ['M5', 800, 'P4']]
+
+Unused memory blocks: [('M5', 800), ('M6', 20), ('M7', 60), ('M8', 250)]
+
+Unallocated processes: []
+
+Total wasted space: [[80, 'P0'], [150, 'P1'], [400, 'P2'], [100, 'P3'], [700, 'P4']]
+
+
+Do you want to continue? (y/n): n
