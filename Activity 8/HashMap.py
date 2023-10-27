@@ -22,6 +22,7 @@ class HashMap:
     def add_values(self, dataList):
         for data in dataList:
             self.add_value(data)
+        return self
 
     def search_value(self, data):
         key = self.hash_function(data)

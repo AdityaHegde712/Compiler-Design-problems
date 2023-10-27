@@ -20,6 +20,7 @@ class LinkedList:
     def append_nodes(self, dataList):
         for data in dataList:
             self.append_node(data)
+        return self
 
     def insert_node(self, data, position):
         if position == 0:

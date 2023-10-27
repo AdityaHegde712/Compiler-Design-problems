@@ -10,8 +10,16 @@ class Array:
     def __init__(self, data):
         self.array = array.array('i', data)
 
-    def insert_value(self, data):
-        self.array.append(data)
+    def insert_value(self, item):
+        pos = -1
+        for i in self.array:
+            if i > item:
+                pos = self.array.index(i)
+                break
+        if pos == -1:
+            self.array.append(item)
+        else:
+            self.array = array.array('i', list(self.array[:pos]) + [item] + list(self.array[pos:]))
 
     def remove_value(self, data):
         self.array.remove(data)

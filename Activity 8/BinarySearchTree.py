@@ -28,6 +28,7 @@ class BinarySearchTree:
     def add_values(self, dataList):
         for data in dataList:
             self.add_value(data)
+        return self
 
     def remove_value(self, data):
         if data < self.data:
