@@ -12,7 +12,29 @@ def first_fit(processes, memory_blocks):
             print(f"{process[0]} is not allocated to any memory block")
             bad_processes.append(process)
 
-    return used_blocks, memory_blocks, bad_processes
+    memory_blocks_copy = [block for block in memory_blocks_copy if block[0] not in used_blocks]
+
+    return used_blocks, memory_blocks_copy, bad_processes
+    # used_blocks = []
+    # bad_processes = []
+    # for process in processes:
+    #     allocated = False
+    #     for block in memory_blocks:
+    #         if block[1] >= process[1] and block[1] not in [used_block[1] for used_block in used_blocks]:
+    #             used_blocks.append(list(block) + [process[0]])
+    #             allocated = True
+    #             break
+    #     if not allocated:
+    #         bad_processes.append(process)
+            
+    #         print(f"{process[0]} is not allocated to any memory block")
+
+    #     else:
+    #         print(f"{process[0]} is allocated to {block[0]}")
+
+    # memory_blocks = [block for block in memory_blocks if block not in used_blocks]
+
+    # return used_blocks, memory_blocks, bad_processes
 
 
 def best_fit(processes, memory_blocks):
@@ -35,7 +57,7 @@ def best_fit(processes, memory_blocks):
             print(f"{process[0]} is not allocated to any memory block")
             bad_processes.append(process)
 
-    return used_blocks, memory_blocks, bad_processes # Return used blocks, unused blocks, unallocated processes
+    return used_blocks, memory_blocks_copy, bad_processes # Return used blocks, unused blocks, unallocated processes
 
 
 def worst_fit(processes, memory_blocks):
@@ -58,7 +80,7 @@ def worst_fit(processes, memory_blocks):
             print(f"{process[0]} is not allocated to any memory block")
             bad_processes.append(process)
 
-    return used_blocks, memory_blocks, bad_processes # Return used blocks, unused blocks, unallocated processes
+    return used_blocks, memory_blocks_copy, bad_processes # Return used blocks, unused blocks, unallocated processes
 
 
 def next_fit(processes, memory_blocks):
@@ -78,7 +100,7 @@ def next_fit(processes, memory_blocks):
             print(f"{process[0]} is not allocated to any memory block")
             bad_processes.append(process)
 
-    return used_blocks, memory_blocks, bad_processes
+    return used_blocks, memory_blocks_copy, bad_processes
 
 def get_waste(processes, used_blocks):
     total_waste = []
